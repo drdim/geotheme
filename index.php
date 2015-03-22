@@ -22,7 +22,6 @@ get_header(); ?>
    // FORM REGISTER OR FORM LOGIN
 	$args = array(
 		'echo'           => true,
-		'redirect'       => site_url( $_SERVER['REQUEST_URI'] ),
 		'form_id'        => 'loginform',
 		'label_username' => __( 'Username' ),
 		'label_password' => __( 'Password' ),
