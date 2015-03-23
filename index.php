@@ -19,12 +19,13 @@ get_header(); ?>
 <?php if ( is_user_logged_in() ) {
 	do_action( 'geo_main_page_view_hook' );
 } else { ?>
-	<h2 class="center">Login</h2>
-	<div class="loginFormWrapper"><?php echo do_shortcode( '[wppb-login]' ) ?></div>
-	<h2 class="center">Register</h2>
-	<div class="registerFormWrapper">
-		<?php echo do_shortcode( '[wppb-register]' );?>
-	</div>
+	<?php auth_redirect(); ?>
+<!--	<h2 class="center">Login</h2>-->
+<!--	<div class="loginFormWrapper">--><?php //echo do_shortcode( '[wppb-login]' ) ?><!--</div>-->
+<!--	<h2 class="center">Register</h2>-->
+<!--	<div class="registerFormWrapper">-->
+<!--		--><?php //echo do_shortcode( '[wppb-register]' );?>
+<!--	</div>-->
 <?php
 } ?>
 
