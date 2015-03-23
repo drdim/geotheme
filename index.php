@@ -18,27 +18,9 @@ get_header(); ?>
 
 <?php if ( is_user_logged_in() ) {
 	do_action( 'geo_main_page_view_hook' );
-} else {
-   // FORM REGISTER OR FORM LOGIN
-	$args = array(
-		'echo'           => true,
-		'form_id'        => 'loginform',
-		'label_username' => __( 'Username' ),
-		'label_password' => __( 'Password' ),
-		'label_remember' => __( 'Remember Me' ),
-		'label_log_in'   => __( 'Log In' ),
-		'id_username'    => 'user_login',
-		'id_password'    => 'user_pass',
-		'id_remember'    => 'rememberme',
-		'id_submit'      => 'wp-submit',
-		'remember'       => true,
-		'value_username' => NULL,
-		'value_remember' => false
-	);
-
-	?>
+} else { ?>
 	<h2 class="center">Login</h2>
-	<div class="loginFormWrapper"><?php wp_login_form( $args );?></div>
+	<div class="loginFormWrapper"><?php echo do_shortcode( '[wppb-login]' ) ?></div>
 	<h2 class="center">Register</h2>
 	<div class="registerFormWrapper">
 		<?php echo do_shortcode( '[wppb-register]' );?>
