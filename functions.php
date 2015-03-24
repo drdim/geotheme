@@ -329,3 +329,16 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+function ob_start_global ()
+{
+	ob_start ();
+}
+add_action ('init', 'ob_start_global');
+
+function ob_flush_global ()
+{
+	echo ob_get_clean ();
+}
+add_action ('shutdown', 'ob_flush_global');
